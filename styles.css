@@ -1,0 +1,13 @@
+body { 
+	padding-top: 50px;
+
+}
+
+#plus {
+	float: right;
+}
+
+#urlCounter {
+	float: right;
+	padding-top: 30px;
+}
