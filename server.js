@@ -14,7 +14,10 @@ app.use("/static", express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 //database middleware
-mongoose.connect('mongodb://localhost/project-01-comparo');
+mongoose.connect(
+	process.env.MONGOLAB_URI ||
+  	process.env.MONGOHQ_URL ||
+	'mongodb://localhost/project-01-comparo');
 var Page = require('./models/page.js');
 
 //render the landing page from index template
@@ -36,6 +39,4 @@ app.get('/pages/:_id', function (req, res) {
 });
 
 
-app.listen(3000, function() {
-  console.log("running on port 3000"); 
-});
+app.listen(process.env.PORT || 3000);
