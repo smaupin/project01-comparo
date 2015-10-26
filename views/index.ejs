@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <% include ./_head.ejs %>
+
+  <body>
+    <% include ./_navbar.ejs %>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6"> 
+        <h1>Welcome/Explanation of Some Sort</h1>
+        <p>Text explaining what to do and how to do it. Letting the people KNOW!</p>
+        <form role = "form" id="main-form"> 
+          <div class="form-top-matter">
+             <div class = "form-group">
+                <label for = "name">Title</label>
+                <input type = "text" name = "title" class = "form-control" placeholder = "Choose a title for this list">
+             </div>
+             <div class = "form-group">
+                <label for = "name">Your Instructions or Question</label>
+                <textarea class = "form-control" name = "blurb" rows = "3" placeholder = "How will the person who gets your link know what to do once they see your links?"></textarea>
+             </div>
+             <hr>
+             <div class="row">
+               <div class="col-sm-4">
+                 <h2>Urls</h2>
+               </div>
+               <div class="col-sm-4 url-counter">
+                 <p id="urlCounter">url count: 1</p>
+               </div>
+               <div class="col-sm-4">
+                 <h2>Titles</h2>
+               </div>
+             </div>
+          </div>
+          <div class="urlStack">
+                <div class="row urlBlock"> 
+                  <br>   
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <input type="text" name = "urls" class="form-control url-text" placeholder="Type or Copy/Paste your link here">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default url-block-btn">Add Url</button>
+                      </span>
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 --> 
+                </div><!-- /.row urlBlock-->
+          </div>
+          <div class="form-bottom-matter">
+            <div class="row">
+              <div class="col-sm-6">
+                  <br>
+                  <span class="input-group-btn">
+                    <input class="btn btn-default" id="submitComparo" type="submit" value="Submit Comparo">
+                  </span>    
+              </div><!-- /.col-lg-6 -->
+              <div class="col-sm-2">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="plus">+</button>
+                  </span>    
+              </div><!-- /.col-lg-6 -->
+              <div class="col-sm-4">    
+              </div><!-- /.col-lg-6 -->
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    
+<!-- Modals -->
+<!-- Button trigger modal -->
+<a type="submit" class="btn btn-default" data-toggle="modal" href="#successModal">Success Modal</a> 
+<a type="submit" class="btn btn-default" data-toggle="modal" href="#failModal">Fail Modal</a> 
+
+<!-- Success Modal -->
+<% include ./_successModal %>
+<!-- Fail Modal -->
+<% include ./_failModal %>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    
+  </body>
+</html>
