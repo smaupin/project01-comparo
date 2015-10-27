@@ -5,7 +5,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-// var db = require("./models/index");
+var db = require("./models/index");
 
 //MIDDLEWARE
 app.set("view engine", "ejs");
@@ -28,14 +28,20 @@ app.get('/', function (req, res) {
 //send info to Comparo Page
 app.post('/pages', function (req, res) {
 	var page = req.body;
-	console.log(page);
-	res.status(200).send('hey');
+	db.Page.create(page, function (err, page) {
+		res.status(200).json(page);
+	});
 });
 
 //show a single comparo page
-app.get('/pages/:_id', function (req, res) {
-	var page = pages[req.params.id];
-	res.render('page-show', {page: page});
+app.get('/pages/:id', function (req, res) {
+	db.Page.findById(req.params.id).exec( function (err, page) {
+		console.log(page);
+		res.render('page-show', {page: page});
+		
+	});
+	// var page = pages[req.params.id];
+	// res.render('page-show', {page: page});
 });
 
 

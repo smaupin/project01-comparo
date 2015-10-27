@@ -22,14 +22,14 @@ $(document).ready( function() {
 		addUrls();	
 	});
 
-	//send form data to server
-	 $('#main-form').on('submit', function (e) {
-	 	e.preventDefault();
-	 	var formData = $(this).serialize();
-	 	$.post('/pages', formData, function (data) {
-	 		console.log(data);
-	 	});
-	 });
+	// //send form data to server
+	//  $('#main-form').on('submit', function (e) {
+	//  	e.preventDefault();
+	//  	var formData = $(this).serialize();
+	//  	$.post('/pages', formData, function (data) {
+	//  		console.log(data);
+	//  	});
+	//  });
 
 
 	//Accept the URL when Add Url Button is Clicked
