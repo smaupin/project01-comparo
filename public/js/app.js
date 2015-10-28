@@ -17,25 +17,31 @@ $(document).ready( function() {
 		$('#urlCounter').html("url count: " + urlCounter);
 	};
 
+	var focusOnLastUrl = function() {
+		$('.urlStack .url-text:last-of-type').focus();
+	};
 //Add More URL fields when plus is clicked
 	$('#plus').on('click', function addUrlByPlus() {
-		addUrls();	
+		addUrls();
+		focusOnLastUrl();
 	});
 
-	// //send form data to server
-	//  $('#main-form').on('submit', function (e) {
-	//  	e.preventDefault();
-	//  	var formData = $(this).serialize();
-	//  	$.post('/pages', formData, function (data) {
-	//  		console.log(data);
-	//  	});
-	//  });
+	//send form data to server
+	 $('#main-form').on('submit', function (e) {
+	 	e.preventDefault();
+	 	var formData = $(this).serialize();
+	 	$.post('/pages', formData, function (data) {
+	 		window.location.href = "/pages/" + data._id;
+	 		//console.log(data);
+	 	});
+	 });
 
 
 	//Accept the URL when Add Url Button is Clicked
 	$('.urlStack').on('click', '.url-block-btn', function addUrlByButton(e) {
 		e.preventDefault();
 		addUrls();
+		focusOnLastUrl();
 	});
 
 

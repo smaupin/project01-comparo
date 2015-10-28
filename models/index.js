@@ -8,4 +8,4 @@ db.once('open', function (callback) {
 });
 
 module.exports.Page = require("./page.js");
-// module.exports.User = require("./user.js");
+module.exports.User = require("./user.js");

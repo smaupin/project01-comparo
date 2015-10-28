@@ -1,0 +1,24 @@
+Get nodemon/server working again.
+
+get url form to check if empty or not before submitting
+when button clicked on entered link
+	check if it is empty or not (validate)
+	set the field,
+	display the url's title next to it.
+		box that allows user to override with custom title
+
+SUbmit of form redirects to the created page
+
+add users
+
+signup
+
+sessions
+
+logout
+
+login
+
+ratings?
+comments?
+

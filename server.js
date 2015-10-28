@@ -7,6 +7,16 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var db = require("./models/index");
 
+// //trying out open graph - IT WORKS
+// var og = require('open-graph');
+ 
+// var url = "http://www.mmajunkie.com";
+ 
+// og(url, function(err, meta){
+//     console.log(meta);
+// }); 
+
+
 //MIDDLEWARE
 app.set("view engine", "ejs");
 
