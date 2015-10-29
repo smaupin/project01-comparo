@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema( {
 	email: String,
 	password: String,
-	joined: Date,
+	joined: { type: Date, default: Date.now },
 	madePages: [],
 	joinedPages:[]
 });

@@ -24,10 +24,7 @@ app.use("/static", express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 //database middleware
-mongoose.connect(
-	process.env.MONGOLAB_URI ||
-  	process.env.MONGOHQ_URL ||
-	'mongodb://localhost/project-01-comparo');
+
 var Page = require('./models/page.js');
 
 //render the landing page from index template

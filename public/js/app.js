@@ -1,22 +1,4 @@
 $(document).ready( function() {
-	// console.log('Hey There.');
-
-
-
-	// var addUrls = function() {
-	// 	$('.urlStack').append(urlBlock);
-
-	// 	// Updates the number of elements with class urlBlock
-	// 	var urlCounter = $('.urlBlock').length;
-	// 	$('#urlCounter').html("url count: " + urlCounter);
-	// };
-
-// auto-shifts focus to the last empty url blank on the page.
-	// var focusOnLastUrl = function() {
-	// 	$('.urlStack .url-text:last-of-type').focus();
-	// };
-
-
 	//Accept the URL when Add Url Button is Clicked or enter returned
 	$('.add-url').on('submit', function(e) {
 		e.preventDefault();
