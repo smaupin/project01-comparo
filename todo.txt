@@ -1,13 +1,22 @@
-Get nodemon/server working again.
+validate urls as urls. and test.
+
+push to heroku. test.
+
+Signup
+
+login
+
+
+
+
 
 get url form to check if empty or not before submitting
 when button clicked on entered link
 	check if it is empty or not (validate)
-	set the field,
-	display the url's title next to it.
+	display the url's title next to it. (basic scraping -- Travis) - if using open graph, can I use that here too?
 		box that allows user to override with custom title
 
-SUbmit of form redirects to the created page
+
 
 add users
 
@@ -22,3 +31,34 @@ login
 ratings?
 comments?
 
+seed data - 
+	mock comparos that are automatically available as demos for new users
+
+error from form submit on main page.
+
+users saved in pages?
+
+pages saved in users?
+
+one, not both?
+
+replace fail modal with error alert? keep the modal?
+
+app.js - fix required not required if there is more than one block last block is the one left blank
+
+url field shrinks way small
+
+thinkn through how adding last one works. if no valid url, then discount it, if something is entered in that field, then make sure it's a url (basically choices are either valid url, or completely blank and will be dropped from the submit form. -- thinking check value, and if there is a value in the field, add the class 'required',  but if there is no value to the text in the box, then basically don't include that box in the request sent.)
+
+title -- add title next to add url. If title is left blank, will go with default page title.
+
+client - post request.
+
+
+server - app.post - req.body will be the url that i need to add
+
+db.url.create
+
+find page
+
+db.page.urls.push(url)

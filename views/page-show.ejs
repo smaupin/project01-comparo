@@ -8,21 +8,50 @@
     <div class="row">
       <div class="col-sm-3"></div>
       <div class="col-sm-6"> 
-        <h1 class = "page-title"><%= page.title %></h1>
+        <h1 class = "page-title" data-id="<%= page._id %>"><%= page.title %></h1>
         <p class="page-author"></p>
         <hr>
         <p class="page-date"></p>
         <p class="page-url">This is where the URL for this page would be, for easy copy or reference.</p>
         <button class="sharing">Sharing Options</button>
         <p class="page-blurb"><%= page.blurb %></p>
+        
+        <form class="add-url">
+          <div class="input-group">
+            <!-- type="url" pattern="https?://.+"  -->
+            <input type="url" pattern="https?://.+" name="urls" class="form-control url-text" placeholder="Type or Copy/Paste your link here beginning with 'http' or 'https'" id="url">
+            <span class="input-group-btn">
+              <button class="btn btn-default url-add-btn" type="submit">Add Url</button>
+            </span>
+          </div>
+        </form>
         <hr>
-        <ul class="page-links-list">
-        <% for (i=0; i<page.urls.length; i+=1) { %>
-          <li class="page-link"><%= page.urls[i] %></li>
-        <% } %>
+        <div>
+          <p>url count: <span id="url-counter"><%= page.urls.length %></span></p>
+        </div>
+        <hr>
+        <ul class="list-group page-links-list">
+          <% for (i=0; i<page.urls.length; i+=1) { %>
+            <a href="<%= page.urls[i] %>" target="_blank" class="list-group-item page-link"><%= page.urls[i] %></a>
+          <% } %>
         </ul>
+        <hr>
+      
+
+       
+
       </div>
       <div class="col-sm-3"></div>
+    </div>
+   
+
+    <div class="urlStack">
+      <div class="row urlBlock"> 
+        <br>   
+        <div class="col-sm-8">
+          
+        </div>
+      </div>
     </div>
     
 

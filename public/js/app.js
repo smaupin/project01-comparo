@@ -1,29 +1,39 @@
 $(document).ready( function() {
-	console.log('Hey There.');
+	// console.log('Hey There.');
 
-	var urlBlock = "<div class='row urlBlock'>" + "<br>" + 
-				"<div class='col-sm-8'>" + 
-				"<div class='input-group'>" + 
-				"<input type='text' name = 'urls' class='form-control url-text' placeholder='Type or Copy/Paste your link here'>" + 
-				"<span class='input-group-btn'>" +
-				"<button class='btn btn-default url-block-btn'>Add Url</button>" +
-				"</span>" + "</div>" + "</div>" + "</div>";
 
-	var addUrls = function() {
-		$('.urlStack').append(urlBlock);
 
-		// Updates the number of elements with class urlBlock
-		var urlCounter = $('.urlBlock').length;
-		$('#urlCounter').html("url count: " + urlCounter);
-	};
+	// var addUrls = function() {
+	// 	$('.urlStack').append(urlBlock);
 
-	var focusOnLastUrl = function() {
-		$('.urlStack .url-text:last-of-type').focus();
-	};
-//Add More URL fields when plus is clicked
-	$('#plus').on('click', function addUrlByPlus() {
-		addUrls();
-		focusOnLastUrl();
+	// 	// Updates the number of elements with class urlBlock
+	// 	var urlCounter = $('.urlBlock').length;
+	// 	$('#urlCounter').html("url count: " + urlCounter);
+	// };
+
+// auto-shifts focus to the last empty url blank on the page.
+	// var focusOnLastUrl = function() {
+	// 	$('.urlStack .url-text:last-of-type').focus();
+	// };
+
+
+	//Accept the URL when Add Url Button is Clicked or enter returned
+	$('.add-url').on('submit', function(e) {
+		e.preventDefault();
+		// console.log('add url button works');
+		var pageId = $('.page-title').data("id");
+		var newUrl = $('#url').val();
+		// console.log(pageId);
+		// console.log(newUrl);
+		$.post('/pages/' +  pageId + '/urls', {url: newUrl} )
+			.done(function(data) {
+				// console.log(data);
+				var url = "<a href='" + data + "' target='_blank' class='list-group-item page-link'>" + data + "</a>";
+				$('.page-links-list').append(url);
+				$('#url').val('').focus();
+				var oldNumber = parseInt($('#url-counter').text());
+				$('#url-counter').text(oldNumber+=1);
+			});
 	});
 
 	//send form data to server
@@ -37,12 +47,8 @@ $(document).ready( function() {
 	 });
 
 
-	//Accept the URL when Add Url Button is Clicked
-	$('.urlStack').on('click', '.url-block-btn', function addUrlByButton(e) {
-		e.preventDefault();
-		addUrls();
-		focusOnLastUrl();
-	});
+// Login and Signup Form Click Events
+
 
 
 
