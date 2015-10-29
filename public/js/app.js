@@ -22,6 +22,8 @@ $(document).ready( function() {
 	 $('#main-form').on('submit', function (e) {
 	 	e.preventDefault();
 	 	var formData = $(this).serialize();
+	 	$('#modal-title').val('');
+	 	$('#modal-title').val('');
 	 	$.post('/pages', formData, function (data) {
 	 		window.location.href = "/pages/" + data._id;
 	 		//console.log(data);
