@@ -5,54 +5,37 @@
 
   <body>
     <% include ./_navbar.ejs %>
-    <div class="row">
+    
       <div class="col-sm-3"></div>
       <div class="col-sm-6"> 
+        <div class="row comparo-container">
         <h1 class = "page-title" data-id="<%= page._id %>"><%= page.title %></h1>
         <p class="page-author"></p>
         <hr>
-        <p class="page-date"></p>
-        <p class="page-url">This is where the URL for this page would be, for easy copy or reference.</p>
-        <button class="sharing">Sharing Options</button>
         <p class="page-blurb"><%= page.blurb %></p>
-        
         <form class="add-url">
+          <hr>
           <div class="input-group">
             <!-- type="url" pattern="https?://.+"  -->
+            <label for = "urls"></label>
             <input type="url" pattern="https?://.+" name="urls" class="form-control url-text" placeholder="Type or Copy/Paste your link here beginning with 'http' or 'https'" id="url" autocomplete="off">
             <span class="input-group-btn">
-              <button class="btn btn-default url-add-btn" type="submit">Add Url</button>
+              <button class="btn btn-active url-add-btn" type="submit">Add Url</button>
             </span>
           </div>
         </form>
         <hr>
-        <div>
+        <div class="url-counter">
           <p>url count: <span id="url-counter"><%= page.urls.length %></span></p>
         </div>
         <hr>
         <ul class="list-group page-links-list">
           <% for (i=0; i<page.urls.length; i+=1) { %>
-            <a href="<%= page.urls[i] %>" target="_blank" class="list-group-item page-link"><%= page.urls[i] %></a>
+            <a href="<%= page.urls[i] %>" target="_blank" class="list-group-item page-link"><%= (i+1) %>.  <%= page.urls[i] %></a>
           <% } %>
         </ul>
-        <hr>
-      
-
-       
-
       </div>
-      <div class="col-sm-3"></div>
-    </div>
-   
-
-    <div class="urlStack">
-      <div class="row urlBlock"> 
-        <br>   
-        <div class="col-sm-8">
-          
-        </div>
       </div>
-    </div>
     
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

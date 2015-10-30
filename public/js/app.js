@@ -30,10 +30,14 @@ $(document).ready( function() {
 	 	});
 	 });
 
-
-// Login and Signup Form Click Events
-
-
+//disable add url button if field is empty.
+	$('.url-add-btn').attr('disabled',true);
+    $('#url').keyup(function(){
+        if($(this).val().length !==0)
+            $('.url-add-btn').attr('disabled', false);            
+        else
+            $('.url-add-btn').attr('disabled',true);
+    });
 
 
 

@@ -1,4 +1,75 @@
 body { 
-	padding-top: 90px;
+	padding-top: 50px;
+	font-family: 'Quicksand', sans-serif;
+	background-image: url(/static/images/comparo-background.jpg);
+    background-position: center top;
+    background-size: 100% auto;
+}
 
+/*NAVBAR*/
+#nav-back {
+	background: rgba(34,77,132, 1.0);
+	border: none;
+	
+}
+
+#brand {
+	color: rgba(255,255,255, 1.0);
+}
+
+
+h1 {
+	font-family: 'Monoton', cursive;
+	margin: 0;	
+}
+
+#start-here-div {
+	text-align: center;
+	background: rgba(0,0,0, 0.5);
+	margin: 0;
+}
+
+#start-here-link {
+	font-family: 'Monoton', cursive;
+	color: rgba(255,255,255, 0.8);
+	font-size: 25px;
+	letter-spacing: 1px;
+}
+
+.jumbotron {
+	background: rgba(255,255,255, 0.5);
+	margin: 0;
+	padding: 90px 0 20px 0;
+}
+
+.lead {
+	margin: 10px 0 0 0;
+
+
+}
+
+
+.btn-active {
+	background: rgba(62, 140, 236, 1.0);
+	color: rgba(255,255,255, 1.0);
+}
+
+/*PAGE SHOW STYLES BELOW*/
+.page-title {
+	padding-top: 50px;
+	color: rgba(255,255,255, 1.0);
+}
+
+.url-counter {
+	color: rgba(255,255,255, 1.0);
+}
+
+.page-blurb {
+	color: rgba(255,255,255, 1.0);
+}
+
+.comparo-container {
+	background: rgba(0, 0, 0, 0.3);
+	margin: 40px 0 0 0;
+	padding: 0 30px 20px 30px;
 }

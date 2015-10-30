@@ -2,16 +2,18 @@
 <html lang="en">
   <% include ./_head.ejs %>
   <body>
-
     <% include ./_navbar.ejs %>
     <div class="jumbotron">
       <div class="container text-center">
-        <h1>Make a List</h1>
-        <div class="lead">Share  with Friends</div>
-        <a class="btn btn-lg" data-toggle="modal" href="#ComparoModal">Start a List</a>  
-        
+        <h1>CLUMP</h1><br>
+        <h1>YOUR</h1><br>
+        <h1>LINKS</h1>
+        <div class="lead">Share them from one place</div>
       </div>
     </div>
+    <div class="row" id="start-here-div">
+      <a class="btn btn-lg" data-toggle="modal" href="#ComparoModal" id="start-here-link">Start   Here</a>  
+
 
     <!-- Modals -->
 
@@ -20,32 +22,33 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">New Comparo List</h4>
+            <img src="/static/images/comparo-logo.png" alt="logo placeholder">
+            <h4 class="modal-title" id="myModalLabel">Make a Comparo List</h4>
           </div>
           <div class="modal-body">
             <form role = "form" id="main-form"> 
               <div class="form-top-matter">
                  <div class = "form-group">
-                    <label for = "title">Title</label>
-                    <input type = "text" name = "title" class = "form-control" placeholder = "Choose a title for this list" id="modal-title"required autocomplete="off">
+                    <label for = "title">Title it:</label>
+                    <input type = "text" name = "title" class = "form-control" placeholder = "Choose a title for this list (Required)" id="modal-title"required autocomplete="off">
                  </div>
                  <div class = "form-group">
-                    <label for = "blurb">Your Instructions or Question</label>
-                    <textarea class = "form-control" name = "blurb" rows = "3" placeholder = "How will the person who gets your link know what to do once they see your links?" id="modal-blurb" autocomplete="off"></textarea>
+                    <label for = "blurb">Does it need any explanation?</label>
+                    <textarea class = "form-control" name = "blurb" rows = "3" placeholder = "Will the person who gets your link know what to do with your links? (Optional)" id="modal-blurb" autocomplete="off"></textarea>
                  </div>
               </div>    
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close
             </button>
-            <input class="btn btn-default" id="submitComparo" type="submit" value="Submit Comparo">
+            <input class="btn btn-active" id="submitComparo" type="submit" value="Create">
           
           </div>
           </form>
         </div>
       </div>
     </div>
-
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
