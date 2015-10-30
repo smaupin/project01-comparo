@@ -69,7 +69,8 @@ h1 {
 }
 
 .comparo-container {
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.5);
 	margin: 40px 0 0 0;
 	padding: 0 30px 20px 30px;
+	border-radius: 4px;
 }
