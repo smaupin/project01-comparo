@@ -43,3 +43,5 @@ For Future Development:
 	4. Graphical Display on Comparo Page - Links to display as title, image, url, and go to link options. Also with comments/ratings.
 		-various sorting methods.
 		-Allow users to utilize titles automatically on the url, or overwrite with their own custom titles (e.g. "my fav. dress :)", "mom's favorite :(")
+
+	5. Styling - I want to see about using a static image in the background but rotating it SUPER SLOWLY to give the effect of a live wallpaper or a shifting gradient without the size of an actual video or animated gif based solution.
